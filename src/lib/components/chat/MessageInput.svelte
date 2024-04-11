@@ -13,23 +13,17 @@
 		{#if autoScroll === false && messages.length > 0}
 			<div class=" flex justify-center mb-4">
 				<button
-					class=" bg-white border border-gray-100 dark:border-none dark:bg-white/20 p-1.5 rounded-full"
+					class="flex items-center justify-center bg-white border border-gray-100 dark:border-none dark:bg-white/15 p-1.5 rounded-full"
 					on:click={() => {
 						autoScroll = true;
 						window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
 					}}
 				>
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						viewBox="0 0 20 20"
-						fill="currentColor"
-						class="w-5 h-5"
-					>
-						<path
-							fill-rule="evenodd"
-							d="M10 3a.75.75 0 01.75.75v10.638l3.96-4.158a.75.75 0 111.08 1.04l-5.25 5.5a.75.75 0 01-1.08 0l-5.25-5.5a.75.75 0 111.08-1.04l3.96 4.158V3.75A.75.75 0 0110 3z"
-							clip-rule="evenodd"
-						/>
+					<svg xmlns="http://www.w3.org/2000/svg" id="arrow-circle-down" viewBox="0 0 24 24" width="20" height="20" class="w-5 h-5">
+						<g>
+							<path fill="#eeeeee" d="M.44,10.982a1.5,1.5,0,0,1,2.121,0l7.671,7.672h0a2.5,2.5,0,0,0,3.536,0l7.671-7.672A1.5,1.5,0,1,1,23.561,13.1l-7.672,7.672a5.5,5.5,0,0,1-7.778,0L.439,13.1a1.5,1.5,0,0,1,0-2.118Z"/>
+							<path fill="#eeeeee" d="M.44,1.439a1.5,1.5,0,0,1,2.121,0l9.085,9.086h0a.5.5,0,0,0,.707,0L21.439,1.44a1.5,1.5,0,0,1,2.122,2.119L14.475,12.64a3.505,3.505,0,0,1-4.95,0L.439,3.559a1.5,1.5,0,0,1,0-2.12Z"/>
+						</g>
 					</svg>
 				</button>
 			</div>
@@ -39,7 +33,7 @@
 		<div class="max-w-3xl px-2.5 -mb-0.5 mx-auto inset-x-0">
 			<div class="bg-gradient-to-t from-white dark:from-gray-800 from-40% pb-2">
 				<form
-					class=" flex flex-col relative w-full rounded-xl border dark:border-gray-600 bg-white dark:bg-gray-800 dark:text-gray-100"
+					class=" flex flex-col relative w-full rounded-3xl border dark:border-gray-600 bg-white dark:bg-gray-800 dark:text-gray-100"
 					on:submit|preventDefault={() => {
 						submitPrompt(prompt);
 					}}
@@ -47,7 +41,7 @@
 					<div class=" flex">
 						<textarea
 							id="chat-textarea"
-							class=" dark:bg-gray-800 dark:text-gray-100 outline-none  w-full py-3 px-2 pl-4 rounded-xl resize-none"
+							class=" dark:bg-gray-800 dark:text-gray-100 outline-none  w-full py-3 px-2 pl-4 rounded-3xl resize-none"
 							placeholder="Send a message"
 							bind:value={prompt}
 							on:keypress={(e) => {
@@ -65,12 +59,12 @@
 							}}
 						/>
 
-						<div class="self-end mb-2 flex space-x-0.5 mr-2">
+						<div class="self-end mb-2 flex items-center space-x-0.5 mr-2">
 							{#if messages.length == 0 || messages.at(-1).done == true}
 								<button
 									class="{prompt !== ''
-										? 'bg-black text-white hover:bg-gray-900 dark:bg-white dark:text-black dark:hover:bg-gray-100 '
-										: 'text-white bg-gray-100 dark:text-gray-800 dark:bg-gray-600 disabled'} transition rounded-lg p-1 mr-0.5 w-7 h-7 self-center"
+										? 'flex items-center bg-black text-white hover:bg-gray-900 dark:bg-white dark:text-black dark:hover:bg-gray-100 rounded-3xl'
+										: 'flex items-center text-white bg-gray-100 dark:text-gray-800 dark:bg-gray-600 disabled'} transition p-1 mr-0.5 w-7 h-7 self-center rounded-3xl"
 									type="submit"
 									disabled={prompt === ""}
 								>
@@ -89,7 +83,7 @@
 								</button>
 							{:else}
 								<button
-									class="bg-white hover:bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-800 transition rounded-lg p-1.5"
+									class="bg-white hover:bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-800 transition rounded-3xl p-1.5"
 									on:click={stopResponse}
 								>
 									<svg
