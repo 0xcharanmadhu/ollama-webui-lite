@@ -47,7 +47,7 @@
 					<div class=" flex">
 						<textarea
 							id="chat-textarea"
-							class=" dark:bg-gray-800 dark:text-gray-100 outline-none w-full py-3 px-2 pl-4 rounded-xl resize-none"
+							class=" dark:bg-gray-800 dark:text-gray-100 outline-none  w-full py-3 px-2 pl-4 rounded-xl resize-none"
 							placeholder="Send a message"
 							bind:value={prompt}
 							on:keypress={(e) => {

@@ -260,15 +260,15 @@
 
 		font-size: 0.9rem;
 		padding: 0.15rem;
-		background-color: #828282;
+		background-color: #606060;
 
-		border: ridge 1px #7b7b7c;
+		border: ridge 1px #505050;
 		border-radius: 5px;
-		text-shadow: #c4c4c4 0 0 2px;
+		text-shadow: #909090 0 0 2px;
 	}
 
 	pre[class*="language-"] button:hover {
 		cursor: pointer;
-		background-color: #bcbabb;
+		background-color: #909090;
 	}
 </style>
