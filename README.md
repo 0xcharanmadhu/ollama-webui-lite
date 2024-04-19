@@ -15,8 +15,12 @@ Follow these steps to set up Ollama-webui-lite:
    git clone https://github.com/ollama-webui/ollama-webui-lite.git
    cd ollama-webui-lite
    ```
+2. Install all dependencies:
+   ```bash
+   bun install
+   ```
 
-2. Run the application in development mode:
+3. Run the application in development mode:
 
    ```bash
    bun dev
